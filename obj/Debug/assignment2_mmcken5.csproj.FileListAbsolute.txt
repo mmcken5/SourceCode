@@ -1,0 +1,9 @@
+c:\users\mike\documents\visual studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\bin\Debug\assignment2_mmcken5.exe.config
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\bin\Debug\assignment2_mmcken5.exe
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\bin\Debug\assignment2_mmcken5.pdb
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\obj\Debug\assignment2_mmcken5.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\obj\Debug\assignment2_mmcken5.mainView.resources
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\obj\Debug\assignment2_mmcken5.Properties.Resources.resources
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\obj\Debug\assignment2_mmcken5.csproj.GenerateResource.Cache
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\obj\Debug\assignment2_mmcken5.exe
+C:\Users\Mike\Documents\Visual Studio 2012\Projects\assignment2_mmcken5\assignment2_mmcken5\obj\Debug\assignment2_mmcken5.pdb
