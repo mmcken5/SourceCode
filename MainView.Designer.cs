@@ -144,6 +144,7 @@
             this.button_setup.TabIndex = 4;
             this.button_setup.Text = "Setup";
             this.button_setup.UseVisualStyleBackColor = true;
+            this.button_setup.Click += new System.EventHandler(this.ST_Setup_Clicked);
             this.button_setup.MouseEnter += new System.EventHandler(this.button_setup_MouseEnter);
             // 
             // button_exit
@@ -168,6 +169,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox3.Location = new System.Drawing.Point(16, 341);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
@@ -178,6 +180,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox4.Location = new System.Drawing.Point(16, 487);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -230,6 +233,7 @@
             this.button_play.TabIndex = 5;
             this.button_play.Text = "Play";
             this.button_play.UseVisualStyleBackColor = true;
+            this.button_play.Click += new System.EventHandler(this.ST_Play_Clicked);
             this.button_play.MouseEnter += new System.EventHandler(this.button_play_MouseEnter);
             // 
             // button_pause
@@ -241,6 +245,7 @@
             this.button_pause.TabIndex = 6;
             this.button_pause.Text = "Pause";
             this.button_pause.UseVisualStyleBackColor = true;
+            this.button_pause.Click += new System.EventHandler(this.ST_Pause_Clicked);
             this.button_pause.MouseEnter += new System.EventHandler(this.button_pause_MouseEnter);
             // 
             // button_teardown
@@ -252,6 +257,7 @@
             this.button_teardown.TabIndex = 7;
             this.button_teardown.Text = "Teardown";
             this.button_teardown.UseVisualStyleBackColor = true;
+            this.button_teardown.Click += new System.EventHandler(this.ST_Teardown_Clicked);
             this.button_teardown.MouseEnter += new System.EventHandler(this.button_teardown_MouseEnter);
             // 
             // pictureBox2
