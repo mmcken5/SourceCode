@@ -21,6 +21,7 @@ namespace assignment2_mmcken5
         private int serverPort;
         private string videoName;
 
+
         public RtspModel()
         {
             try
@@ -34,6 +35,8 @@ namespace assignment2_mmcken5
             }
         }
 
+
+        // Connect to the server via TCP
         public void Connect(int _port, IPAddress _serverIP)
         {
             try
@@ -51,11 +54,13 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Initialize the sequence number
         public void ResetSequenceNumber()
         {
             cseq = 0; 
         }
+
 
         // Increase the sequence number by one
         public void UpdateSequenceNumber()
@@ -63,11 +68,13 @@ namespace assignment2_mmcken5
             cseq++;
         }
 
+
         // Set the session ID number
         public void SetSessionID(int _id)
         {
             sessionID = _id; 
         }
+
 
         // Send the RTSP SETUP message to the server with the necessary information enclosed
         public void Setup(string _serverIP, int _serverPort, int _port, string _videoName)
@@ -99,6 +106,7 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Send the RTSP PLAY message to the server
         public void Play()
         {
@@ -118,6 +126,7 @@ namespace assignment2_mmcken5
                 //MessageBox.Show("An error occured while attempting to send the RTSP PLAY message to the server.\r\n" + e.Message);
             }
         }
+
 
         // Send the RTSP PAUSE message to the server
         public void Pause()
@@ -139,6 +148,7 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Send the RTSP TEARDOWN message to the server
         public void Teardown()
         {
@@ -158,6 +168,7 @@ namespace assignment2_mmcken5
                 //MessageBox.Show("An error occured while attempting to send the RTSP PAUSE message to the server.\r\n" + e.Message);
             }
         }
+
 
         // Receive the reply message from the server
         public string ReceiveReply()
@@ -182,6 +193,7 @@ namespace assignment2_mmcken5
 
             return reply;
         }
+
 
         // Close the tcp socket
         public void CloseTcpSocket()

@@ -28,7 +28,8 @@ namespace assignment2_mmcken5
         private string headerTimeStamp;
         private string headerPayloadType;
 
-        private RtpPacket packet; 
+        private RtpPacket packet;
+ 
 
         public RtpModel()
         {
@@ -38,6 +39,7 @@ namespace assignment2_mmcken5
             // Initialize the list
             usedPorts = new List<int>(); 
         }
+
 
         // Creates a local UDP socket, and returns the UDP server port number
         public int CreateUDPSocket(IPAddress _ip)
@@ -99,11 +101,13 @@ namespace assignment2_mmcken5
             return serverPort; 
         }
 
+
         // Set the new udp port to bind to
         public void SetNewUdpPort(int _p)
         {
             serverPort = _p;
         }
+
 
         // Receives a frame from the video server
         public Image ReceiveFrame()
@@ -153,11 +157,13 @@ namespace assignment2_mmcken5
             return image;
         }
 
+
         // Returns the rtp header as an array of bytes
         public byte[] GetRtpHeaderBytes()
         {
             return rtpHeader;
         }
+
 
         // Returns a string containing a report about the packet
         public string GetRtpPacketReport()
@@ -166,11 +172,13 @@ namespace assignment2_mmcken5
             return s; 
         }
 
+
         // Returns the sequence number of the rtp packet
         public string GetRtpHeaderSequenceNumber()
         {
             return headerSeqNo;
         }
+
 
         // Returns the time stamp of the rtp packet
         public string GetRtpHeaderTimeStamp()
@@ -178,11 +186,13 @@ namespace assignment2_mmcken5
             return headerTimeStamp;
         }
 
+
         // Returns the payload type of the rtp packet
         public string GetRtpHeaderPayloadType()
         {
             return headerPayloadType;
         }
+
 
         // Close the UDP socket
         public void CloseUDPSocket()

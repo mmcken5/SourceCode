@@ -11,6 +11,7 @@ namespace assignment2_mmcken5
         private byte[] rtpPacketPayload;
         private byte[] rtpPacketHeader;
 
+
         public RtpPacket(byte[] _packet, int _size)
         {
             rtpPacketHeader = new byte[12];
@@ -29,17 +30,20 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Get the header of the packet
         public byte[] GetPacketHeader()
         {
             return rtpPacketHeader;
         }
 
+
         // Return the payload (frame) of the packet
         public byte[] GetPacketPayload()
         {
             return rtpPacketPayload;
         }
+
 
         // Return the sequence number of the packet
         public int GetPacketSequenceNumber()
@@ -68,6 +72,7 @@ namespace assignment2_mmcken5
             return seqNo;
         }
 
+
         // Return the time stamp of the packet
         public long GetPacketTimeStamp()
         {
@@ -83,12 +88,6 @@ namespace assignment2_mmcken5
             long i1 = (long)b1;
             long i0 = (long)b0;
 
-            //DEBUG ONLY
-            if (i0 == 64)
-            {
-                int i = 0;
-            }
-
             // Use bitwise AND and the shift operator to get all the bits in the correct position
             i3 = ((i3 & 0x000000ff) << 24);
             i2 = ((i2 & 0x000000ff) << 16);
@@ -100,6 +99,7 @@ namespace assignment2_mmcken5
 
             return timeStamp;
         }
+
 
         // Return the payload type of the packet
         public int GetPacketPayloadType()

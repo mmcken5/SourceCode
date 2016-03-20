@@ -16,6 +16,7 @@ namespace assignment2_mmcken5
         private List<int> usedPorts;
         private bool newPortNum;
 
+
         public UsedPortDialog(RtpModel _rtpModel ,List<int> _usedPorts)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Exit the application
         private void button2_Click(object sender, EventArgs e)
         {
@@ -38,6 +40,7 @@ namespace assignment2_mmcken5
             // Close the form
             this.Close();
         }
+
 
         // Validate and return the new udp port to bind
         private void button1_Click(object sender, EventArgs e)
@@ -62,10 +65,11 @@ namespace assignment2_mmcken5
                         if (p == i)
                         {
                             matchFound = true;
-                            MessageBox.Show("Please enter a port number greater than 1024.");
+                            MessageBox.Show("Please enter a port number that has not already been used.");
                         }
                     }
 
+                    // If the port number entered by the user has not already been used, use it now
                     if (!matchFound)
                     {
                         // Update the rtp model
@@ -88,6 +92,7 @@ namespace assignment2_mmcken5
                 MessageBox.Show("Please enter a valid port number");
             }
         }
+
 
         // Return the new port number
         public bool GetDialogResult()

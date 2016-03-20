@@ -26,6 +26,7 @@ namespace assignment2_mmcken5
 
         private bool paused = true; 
 
+
         // Connect to the server, given the port number and IP address entered by the user
         public void Connect_Button_Click(object sender, EventArgs e)
         {
@@ -58,6 +59,7 @@ namespace assignment2_mmcken5
                 MessageBox.Show("An error occured while attempting to connect to the server. Please make sure that the server application is running.");
             }
         }
+
 
         // Set up the TCP connection with the server and open a UDP socket
         public void SetupClicked(string _videoName)
@@ -116,6 +118,7 @@ namespace assignment2_mmcken5
                 rtspModel.CloseTcpSocket();
             }
         }
+
 
         // On a timer timer event, get one frame from the server
         private void timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -187,11 +190,13 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Returns true if the stream has been paused
         public bool IsPaused()
         {
             return paused;
         }
+
 
         // Extract the session ID number from the rtsp reply message from the server
         private int ExtractSessionID(string _message)
@@ -215,6 +220,7 @@ namespace assignment2_mmcken5
             return id; 
         }
 
+
         // Start playing the video stream from the video server
         public void PlayClicked()
         {
@@ -236,6 +242,7 @@ namespace assignment2_mmcken5
             view.UpdateServerResponsesTextBox(message);
         }
 
+
         // Stop playing the video stream from the video server
         public void PauseClicked()
         {
@@ -256,6 +263,7 @@ namespace assignment2_mmcken5
             // Update the view to display the server response
             view.UpdateServerResponsesTextBox(message);
         }
+
 
         // Stop streaming and close the UDP connection with the server
         public void TeardownClicked()
@@ -286,6 +294,7 @@ namespace assignment2_mmcken5
             // Close the UDP connection
             rtpModel.CloseUDPSocket();
         }
+
 
         // Close the socket connections
         public void CloseConnections()

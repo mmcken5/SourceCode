@@ -24,6 +24,7 @@ namespace assignment2_mmcken5
 
         private bool firstMessage = true;
 
+
         public mainView()
         {
             // Initialize all the form components and display the UI
@@ -43,11 +44,13 @@ namespace assignment2_mmcken5
             controller = new ClientController(); 
         }
 
+
         // Mouse has entered the video box frame area
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             ShowTransparentButtons();
         }
+
 
         // Display the semi-transparent buttons
         private void ShowTransparentButtons()
@@ -77,6 +80,7 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Hide the semi-transparent buttons
         private void HideTransparentButtons()
         {
@@ -86,12 +90,14 @@ namespace assignment2_mmcken5
             pictureBox5.Hide();
         }
 
+
         // Semi-transparent setup button has been clicked
         private void ST_Setup_Clicked(object sender, EventArgs e)
         {  
             // Call setup function in controller
             controller.SetupClicked(comboBox_video_name.Text);
         }
+
 
         // Disable all of the RTSP buttons, except for the PLAY button
         public void DisplayPlay()
@@ -115,6 +121,7 @@ namespace assignment2_mmcken5
             pictureBox3.Show();
         }
 
+
         // Semi-transparent play button has been clicked
         private void ST_Play_Clicked(object sender, EventArgs e)
         {
@@ -135,6 +142,7 @@ namespace assignment2_mmcken5
             controller.PlayClicked();
         }
 
+
         // Semi-transparent pause button has been clicked
         private void ST_Pause_Clicked(object sender, EventArgs e)
         {
@@ -151,6 +159,7 @@ namespace assignment2_mmcken5
             // Call pause method in the controller
             controller.PauseClicked();
         }
+
         
         // Semi-transparent teardown button has been clicked
         private void ST_Teardown_Clicked(object sender, EventArgs e)
@@ -173,6 +182,7 @@ namespace assignment2_mmcken5
             controller.TeardownClicked();
         }
 
+
         // Mouse has left the video frame area
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
@@ -182,11 +192,13 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Mouse has left the video frame area
         private void panel1_MouseLeave(object sender, EventArgs e)
         {
             HideTransparentButtons();
         }
+
 
         // Mouse has left the video frame area
         private void mainView_MouseEnter(object sender, EventArgs e)
@@ -194,11 +206,13 @@ namespace assignment2_mmcken5
             HideTransparentButtons();
         }
 
+
         // Mouse has left the video frame area
         private void button_setup_MouseEnter(object sender, EventArgs e)
         {
             HideTransparentButtons();
         }
+
 
         // Mouse has left the video frame area
         private void button_play_MouseEnter(object sender, EventArgs e)
@@ -206,11 +220,13 @@ namespace assignment2_mmcken5
             HideTransparentButtons();
         }
 
+
         // Mouse has left the video frame area
         private void button_pause_MouseEnter(object sender, EventArgs e)
         {
             HideTransparentButtons();
         }
+
 
         // Mouse has left the video frame area
         private void button_teardown_MouseEnter(object sender, EventArgs e)
@@ -218,11 +234,13 @@ namespace assignment2_mmcken5
             HideTransparentButtons();
         }
 
+
         // Mouse has left the video frame area
         private void panel2_MouseEnter(object sender, EventArgs e)
         {
             HideTransparentButtons();
         }
+
 
         // Validate the user input and then let the controller know the client wishes to connect to the server
         private void button_connect_Click(object sender, EventArgs e)
@@ -273,6 +291,7 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Display the video streaming box (panel) and enable/disable the associated controls
         public void DisplayStreamingBox()
         {
@@ -292,6 +311,7 @@ namespace assignment2_mmcken5
             pictureBox5.Hide();
         }
 
+
         // Disables the controls associated with connecting
         public void Disable_InputTextBoxes()
         {
@@ -299,6 +319,7 @@ namespace assignment2_mmcken5
             textBox_server_ip.Enabled = false; 
             button_connect.Enabled = false;
         }
+
 
         // The exit button has been pressed and the application is about to close
         private void button_exit_Click(object sender, EventArgs e)
@@ -310,17 +331,20 @@ namespace assignment2_mmcken5
             Application.Exit();
         }
 
+
         // Return the port number to connect to, as entered by the user
         public int GetPort()
         {
             return port;
         }
 
+
         // Return the server's IP address as entered by the user
         public IPAddress GetServerIP()
         {
             return serverIP;
         }
+
 
         // Adds a message to the server responses text box
         public void UpdateServerResponsesTextBox(string message)
@@ -334,6 +358,7 @@ namespace assignment2_mmcken5
                 textBox4.Text += "\r\n" + message + "\r\n";
             }
         }
+
 
         // Adds a message to the information text box 
         public void UpdateInfoTextBox(string message)
@@ -349,11 +374,13 @@ namespace assignment2_mmcken5
             }
         }
 
+
         // Displays a frame in the picture box
         public void DisplayFrame(Image _img)
         {
             pictureBox1.Image = _img;
         }
+
 
         // Let the controller know that the form is closing
         private void mainView_FormClosing(object sender, FormClosingEventArgs e)
@@ -362,8 +389,10 @@ namespace assignment2_mmcken5
             controller.CloseConnections();
         }
 
+
         // Delegate to reset the display
         delegate void ResetDisplayCallback();
+
 
         // Create the deleage to call the SetupReset function 
         public void SetupReset()
@@ -371,6 +400,7 @@ namespace assignment2_mmcken5
             ResetDisplayCallback d = new ResetDisplayCallback(SetupResetLocal);
             this.Invoke(d);
         }
+
 
         // Reset the form to the state where it is ready to set up a RTP connection with the server
         private void SetupResetLocal()
@@ -395,6 +425,7 @@ namespace assignment2_mmcken5
                 MessageBox.Show(e.Message);
             }
         }
+
 
         // Reset the view to how it is when it initially loads
         public void Reset()
@@ -425,11 +456,13 @@ namespace assignment2_mmcken5
             button_connect.Enabled = true; 
         }
 
+
         // Returns whether the "Packet Report" check box is checked
         public bool IsPacketReportChecked()
         {
             return checkBox_packet_report.Checked;
         }
+
 
         // Returns whether the "Print Header" check box is checked
         public bool IsPrintHeaderChecked()
@@ -437,8 +470,10 @@ namespace assignment2_mmcken5
             return checkBox_print_header.Checked;
         }
 
+
         // Delegate to reset the display
         delegate void DisplayReportCallback(string _report);
+
 
         // Create the deleage to call the SetupReset function 
         public void UpdateInfoTextBoxDelegate(string _rtp)
