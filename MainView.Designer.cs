@@ -44,20 +44,20 @@
             this.checkBox_print_header = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button_play = new System.Windows.Forms.Button();
             this.button_pause = new System.Windows.Forms.Button();
             this.button_teardown = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,13 +137,15 @@
             // 
             // button_setup
             // 
+            this.button_setup.BackColor = System.Drawing.SystemColors.Control;
             this.button_setup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_setup.ForeColor = System.Drawing.Color.Black;
             this.button_setup.Location = new System.Drawing.Point(6, 6);
             this.button_setup.Name = "button_setup";
             this.button_setup.Size = new System.Drawing.Size(75, 23);
             this.button_setup.TabIndex = 4;
             this.button_setup.Text = "Setup";
-            this.button_setup.UseVisualStyleBackColor = true;
+            this.button_setup.UseVisualStyleBackColor = false;
             this.button_setup.Click += new System.EventHandler(this.ST_Setup_Clicked);
             this.button_setup.MouseEnter += new System.EventHandler(this.button_setup_MouseEnter);
             // 
@@ -174,6 +176,7 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox3.Size = new System.Drawing.Size(407, 117);
             this.textBox3.TabIndex = 3;
             this.textBox3.TabStop = false;
@@ -185,6 +188,7 @@
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
+            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox4.Size = new System.Drawing.Size(407, 125);
             this.textBox4.TabIndex = 3;
             this.textBox4.TabStop = false;
@@ -204,6 +208,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(508, 228);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
@@ -224,63 +229,16 @@
             this.panel1.TabIndex = 6;
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
-            // button_play
+            // pictureBox5
             // 
-            this.button_play.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_play.Location = new System.Drawing.Point(147, 6);
-            this.button_play.Name = "button_play";
-            this.button_play.Size = new System.Drawing.Size(75, 23);
-            this.button_play.TabIndex = 5;
-            this.button_play.Text = "Play";
-            this.button_play.UseVisualStyleBackColor = true;
-            this.button_play.Click += new System.EventHandler(this.ST_Play_Clicked);
-            this.button_play.MouseEnter += new System.EventHandler(this.button_play_MouseEnter);
-            // 
-            // button_pause
-            // 
-            this.button_pause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_pause.Location = new System.Drawing.Point(285, 6);
-            this.button_pause.Name = "button_pause";
-            this.button_pause.Size = new System.Drawing.Size(75, 23);
-            this.button_pause.TabIndex = 6;
-            this.button_pause.Text = "Pause";
-            this.button_pause.UseVisualStyleBackColor = true;
-            this.button_pause.Click += new System.EventHandler(this.ST_Pause_Clicked);
-            this.button_pause.MouseEnter += new System.EventHandler(this.button_pause_MouseEnter);
-            // 
-            // button_teardown
-            // 
-            this.button_teardown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_teardown.Location = new System.Drawing.Point(434, 6);
-            this.button_teardown.Name = "button_teardown";
-            this.button_teardown.Size = new System.Drawing.Size(75, 23);
-            this.button_teardown.TabIndex = 7;
-            this.button_teardown.Text = "Teardown";
-            this.button_teardown.UseVisualStyleBackColor = true;
-            this.button_teardown.Click += new System.EventHandler(this.ST_Teardown_Clicked);
-            this.button_teardown.MouseEnter += new System.EventHandler(this.button_teardown_MouseEnter);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::assignment2_mmcken5.Properties.Resources.Setup;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 190);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 34);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.ST_Setup_Clicked);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::assignment2_mmcken5.Properties.Resources.Play;
-            this.pictureBox3.Location = new System.Drawing.Point(165, 190);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 34);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.ST_Play_Clicked);
+            this.pictureBox5.Image = global::assignment2_mmcken5.Properties.Resources.Teardown;
+            this.pictureBox5.Location = new System.Drawing.Point(450, 190);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 6;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.ST_Teardown_Clicked);
             // 
             // pictureBox4
             // 
@@ -293,16 +251,69 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.ST_Pause_Clicked);
             // 
-            // pictureBox5
+            // pictureBox3
             // 
-            this.pictureBox5.Image = global::assignment2_mmcken5.Properties.Resources.Teardown;
-            this.pictureBox5.Location = new System.Drawing.Point(450, 190);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(41, 34);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 6;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.ST_Teardown_Clicked);
+            this.pictureBox3.Image = global::assignment2_mmcken5.Properties.Resources.Play;
+            this.pictureBox3.Location = new System.Drawing.Point(165, 190);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.ST_Play_Clicked);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::assignment2_mmcken5.Properties.Resources.Setup;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 190);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.ST_Setup_Clicked);
+            // 
+            // button_play
+            // 
+            this.button_play.BackColor = System.Drawing.SystemColors.Control;
+            this.button_play.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_play.ForeColor = System.Drawing.Color.Black;
+            this.button_play.Location = new System.Drawing.Point(147, 6);
+            this.button_play.Name = "button_play";
+            this.button_play.Size = new System.Drawing.Size(75, 23);
+            this.button_play.TabIndex = 5;
+            this.button_play.Text = "Play";
+            this.button_play.UseVisualStyleBackColor = false;
+            this.button_play.Click += new System.EventHandler(this.ST_Play_Clicked);
+            this.button_play.MouseEnter += new System.EventHandler(this.button_play_MouseEnter);
+            // 
+            // button_pause
+            // 
+            this.button_pause.BackColor = System.Drawing.SystemColors.Control;
+            this.button_pause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_pause.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_pause.Location = new System.Drawing.Point(285, 6);
+            this.button_pause.Name = "button_pause";
+            this.button_pause.Size = new System.Drawing.Size(75, 23);
+            this.button_pause.TabIndex = 6;
+            this.button_pause.Text = "Pause";
+            this.button_pause.UseVisualStyleBackColor = false;
+            this.button_pause.Click += new System.EventHandler(this.ST_Pause_Clicked);
+            this.button_pause.MouseEnter += new System.EventHandler(this.button_pause_MouseEnter);
+            // 
+            // button_teardown
+            // 
+            this.button_teardown.BackColor = System.Drawing.SystemColors.Control;
+            this.button_teardown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_teardown.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_teardown.Location = new System.Drawing.Point(434, 6);
+            this.button_teardown.Name = "button_teardown";
+            this.button_teardown.Size = new System.Drawing.Size(75, 23);
+            this.button_teardown.TabIndex = 7;
+            this.button_teardown.Text = "Teardown";
+            this.button_teardown.UseVisualStyleBackColor = false;
+            this.button_teardown.Click += new System.EventHandler(this.ST_Teardown_Clicked);
+            this.button_teardown.MouseEnter += new System.EventHandler(this.button_teardown_MouseEnter);
             // 
             // panel2
             // 
@@ -340,13 +351,14 @@
             this.Controls.Add(this.panel1);
             this.Name = "mainView";
             this.Text = "Video Player";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainView_FormClosing);
             this.MouseEnter += new System.EventHandler(this.mainView_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

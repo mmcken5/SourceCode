@@ -57,6 +57,12 @@
     <Compile Include="RtpModel.cs" />
     <Compile Include="RtpPacket.cs" />
     <Compile Include="RtspModel.cs" />
+    <Compile Include="UsedPortDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsedPortDialog.Designer.cs">
+      <DependentUpon>UsedPortDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="mainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,6 +76,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UsedPortDialog.resx">
+      <DependentUpon>UsedPortDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

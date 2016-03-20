@@ -88,6 +88,13 @@ namespace assignment2_mmcken5
 
         // Semi-transparent setup button has been clicked
         private void ST_Setup_Clicked(object sender, EventArgs e)
+        {  
+            // Call setup function in controller
+            controller.SetupClicked(comboBox_video_name.Text);
+        }
+
+        // Disable all of the RTSP buttons, except for the PLAY button
+        public void DisplayPlay()
         {
             // Disable all buttons except the play button
             button_setup.Enabled = false;
@@ -96,37 +103,74 @@ namespace assignment2_mmcken5
 
             // Disable all the semi-transparent buttons except for the play button
             displaySetup = false;
+            pictureBox2.Hide();
             displayPause = false;
+            pictureBox4.Hide();
             displayTeardown = false;
+            pictureBox5.Hide();
 
-            // Call setup function in controller
-            controller.SetupClicked(comboBox_video_name.Text);
-            Console.WriteLine("Setup has been clicked");
+            // Enable the play button
+            button_play.Enabled = true;
+            displayPlay = true;
+            pictureBox3.Show();
         }
 
         // Semi-transparent play button has been clicked
         private void ST_Play_Clicked(object sender, EventArgs e)
         {
             // Disable play button
+            button_play.Enabled = false;
+            displayPlay = false;
+            pictureBox3.Hide();
 
+            // Enable pause and teardown buttons
+            button_pause.Enabled = true;
+            pictureBox4.Show();
+            displayPause = true;
+            button_teardown.Enabled = true;
+            displayTeardown = true;
+            pictureBox5.Show();
 
-            // Enable pause and play buttons
-
-            // TODO: Call play function in controller
-
-            Console.WriteLine("Play has been clicked");
+            // Call play function in controller
+            controller.PlayClicked();
         }
 
         // Semi-transparent pause button has been clicked
         private void ST_Pause_Clicked(object sender, EventArgs e)
         {
-            Console.WriteLine("Pause has been clicked");
+            // Enable play button
+            button_play.Enabled = true;
+            pictureBox3.Show();
+            displayPlay = true; 
+
+            // Disable pause button
+            button_pause.Enabled = false;
+            pictureBox4.Hide();
+            displayPause = false; 
+
+            // Call pause method in the controller
+            controller.PauseClicked();
         }
         
         // Semi-transparent teardown button has been clicked
         private void ST_Teardown_Clicked(object sender, EventArgs e)
         {
-            Console.WriteLine("Teardown has been clicked");
+            // Disable all buttons except setup
+            button_setup.Enabled = true;
+            displaySetup = true; 
+            pictureBox2.Show();
+            button_play.Enabled = false;
+            displayPlay = false;
+            pictureBox3.Hide();
+            button_pause.Enabled = false;
+            displayPause = false; 
+            pictureBox4.Hide();
+            button_teardown.Enabled = false;
+            displayTeardown = false; 
+            pictureBox5.Hide();
+
+            // Call teardown method in the controller
+            controller.TeardownClicked();
         }
 
         // Mouse has left the video frame area
@@ -201,16 +245,12 @@ namespace assignment2_mmcken5
                         // Convert the user input to an IP address
                         serverIP = IPAddress.Parse(textBox_server_ip.Text);
 
-                        // Display the streaming panel
-                        panel1.Show();
-                        panel2.Show();
-
                         // After successful validation, signal the controller
                         controller.Connect_Button_Click(sender, e);
                     }
                     catch (ArgumentNullException)
                     {
-                        MessageBox.Show("Please enter a port number.");
+                        MessageBox.Show("Please enter a server IP address.");
                     }
                     catch (FormatException)
                     {
@@ -233,6 +273,25 @@ namespace assignment2_mmcken5
             }
         }
 
+        // Display the video streaming box (panel) and enable/disable the associated controls
+        public void DisplayStreamingBox()
+        {
+            // Display the streaming panel
+            panel1.Show();
+            panel2.Show();
+
+            // Only display the setup button and disable the others
+            button_play.Enabled = false;
+            displayPlay = false;
+            pictureBox3.Hide();
+            button_pause.Enabled = false;
+            displayPause = false;
+            pictureBox4.Hide();
+            button_teardown.Enabled = false;
+            displayTeardown = false;
+            pictureBox5.Hide();
+        }
+
         // Disables the controls associated with connecting
         public void Disable_InputTextBoxes()
         {
@@ -247,7 +306,8 @@ namespace assignment2_mmcken5
             // Let the controller know that the application is about to close
             controller.CloseConnections();
 
-            // TODO: Close the application
+            // Close the application
+            Application.Exit();
         }
 
         // Return the port number to connect to, as entered by the user
@@ -287,6 +347,105 @@ namespace assignment2_mmcken5
             {
                 textBox3.Text += "\r\n" + message + "\r\n";
             }
+        }
+
+        // Displays a frame in the picture box
+        public void DisplayFrame(Image _img)
+        {
+            pictureBox1.Image = _img;
+        }
+
+        // Let the controller know that the form is closing
+        private void mainView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Close any open connections before the application terminates
+            controller.CloseConnections();
+        }
+
+        // Delegate to reset the display
+        delegate void ResetDisplayCallback();
+
+        // Create the deleage to call the SetupReset function 
+        public void SetupReset()
+        {
+            ResetDisplayCallback d = new ResetDisplayCallback(SetupResetLocal);
+            this.Invoke(d);
+        }
+
+        // Reset the form to the state where it is ready to set up a RTP connection with the server
+        private void SetupResetLocal()
+        {
+            try
+            {
+                // Disable all buttons except setup
+                button_setup.Enabled = true;
+                displaySetup = true;
+                button_play.Enabled = false;
+                displayPlay = false;
+                pictureBox3.Hide();
+                button_pause.Enabled = false;
+                displayPause = false;
+                pictureBox4.Hide();
+                button_teardown.Enabled = false;
+                displayTeardown = false;
+                pictureBox5.Hide();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        // Reset the view to how it is when it initially loads
+        public void Reset()
+        {
+            // Disable all buttons RTSP buttons
+            button_setup.Enabled = true;
+            displaySetup = true;
+            pictureBox2.Hide();
+            button_play.Enabled = false;
+            displayPlay = false;
+            pictureBox3.Hide();
+            button_pause.Enabled = false;
+            displayPause = false;
+            pictureBox4.Hide();
+            button_teardown.Enabled = false;
+            displayTeardown = false;
+            pictureBox5.Hide();
+
+            // Hide the video streaming box
+            panel1.Hide();
+            panel2.Hide();
+
+            // Enable the user input text boxes
+            textBox_port.Enabled = true; 
+            textBox_server_ip.Enabled = true;
+
+            // Enable the connect button
+            button_connect.Enabled = true; 
+        }
+
+        // Returns whether the "Packet Report" check box is checked
+        public bool IsPacketReportChecked()
+        {
+            return checkBox_packet_report.Checked;
+        }
+
+        // Returns whether the "Print Header" check box is checked
+        public bool IsPrintHeaderChecked()
+        {
+            return checkBox_print_header.Checked;
+        }
+
+        // Delegate to reset the display
+        delegate void DisplayReportCallback(string _report);
+
+        // Create the deleage to call the SetupReset function 
+        public void UpdateInfoTextBoxDelegate(string _rtp)
+        {
+            string r = _rtp;
+            DisplayReportCallback d = new DisplayReportCallback(UpdateInfoTextBox);
+            this.Invoke(d, new object[] { r });
         }
     }
 }
